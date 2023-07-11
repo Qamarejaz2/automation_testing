@@ -17,7 +17,7 @@ def login():
     # You can validate the username and password against a database or any other authentication mechanism
 
     # Example authentication check
-    if username == 'qe2' and password == 'Pichu@1234':
+    if username == 'name' and password == 'pwd':
         # Generate JWT token
         token = jwt.encode({'username': username}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token})
