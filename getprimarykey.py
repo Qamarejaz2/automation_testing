@@ -10,17 +10,17 @@ def get_primary_key():
         if request.method == 'GET':
             # Connect to the SQL Server database
             conn = pymssql.connect(
-                host='172.16.0.66',
-                user='datascience',
-                password='mtbc@1234',
-                database='mis_db'
+                host='hostname',
+                user='name',
+                password='123',
+                database='db'
             )
 
             # Create a cursor object to execute SQL queries
             cursor = conn.cursor()
 
             # Execute a SELECT query to retrieve the primary key
-            cursor.execute("SELECT PracticeName FROM RCMWebApp WHERE ProviderName = 572")  # Replace 'your_table' with your actual table name
+            cursor.execute("SELECT * from table")  # Replace 'your_table' with your actual table name
 
             # Fetch the primary key value
             primary_key = cursor.fetchone()[0]
