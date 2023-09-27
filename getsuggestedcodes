@@ -1,1 +1,28 @@
 from django.shortcuts import render
+from rest_framework.response import response
+from rest_framework.views import APIView
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from suggestedcode.db_config import Database
+import re
+import os
+import pandas as pd
+import pymysql
+import urllib
+import sqlalchemy as sa
+
+class getsuggestedcode(APIView):
+    def_init_(self):
+    self.patient_age=None
+    self.scenario_1=None
+    self.scenario_2=None
+    self.scenario_3=None
+    self.scenario_4=None
+
+    self.conn = self.cursor= None
+
+def post(self,request):
+    try:
+        if not request.data.get("ptaccno",None):
+            return response({"status":"Failure","message":"patient acc nbr is required"}, status=400)
+        
