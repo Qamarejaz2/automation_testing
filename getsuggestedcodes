@@ -25,4 +25,11 @@ def post(self,request):
     try:
         if not request.data.get("ptaccno",None):
             return response({"status":"Failure","message":"patient acc nbr is required"}, status=400)
-        
+        def post(self, request):
+            try:
+                if not
+request.data.get("ptaccno",None):retrun Response({"status":"Failure","message":"Patientaccno is required"}, status=400)
+        if self.patient_age==None:
+            return Response({"status":"Success","message":"patient not found against that one"},status =200)
+        except Exception as e:
+            return Response({"status":"Failure","message : ": str(e)}, status=400)
