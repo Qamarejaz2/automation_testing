@@ -33,3 +33,9 @@ request.data.get("ptaccno",None):retrun Response({"status":"Failure","message":"
             return Response({"status":"Success","message":"patient not found against that one"},status =200)
         except Exception as e:
             return Response({"status":"Failure","message : ": str(e)}, status=400)
+class Index(APIview):
+
+    def get(self, request):
+        # return "working"
+        return Response({"status": "Success","message":"working"}, status=200)
+
