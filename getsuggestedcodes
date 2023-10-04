@@ -31,7 +31,19 @@ def post(self,request):
 request.data.get("ptaccno",None):retrun Response({"status":"Failure","message":"Patientaccno is required"}, status=400)
         if self.patient_age==None:
             return Response({"status":"Success","message":"patient not found against that one"},status =200)
-        except Exception as e:
+       
+def scenario_1(self, Patienyacc):
+    try:
+        if self.patientage>=40 and self.patientage<=75:
+        q= f""" select top1 * from tblpt"""
+    df=self.get_date(q)
+    if len(df) > 0:
+        return '123',"name of cpt"
+    else:
+        return None, None        
+else:
+    return None, None
+ except Exception as e:
             return Response({"status":"Failure","message : ": str(e)}, status=400)
 class Index(APIview):
 
