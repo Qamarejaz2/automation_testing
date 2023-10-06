@@ -1,6 +1,6 @@
 import jwt
 from flask import Flask, request, jsonify
-#from validtoken import requires_auth_token
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'qamarejaz'
@@ -13,12 +13,12 @@ def login():
     username = request.json.get('username')
     password = request.json.get('password')
 
-    # Perform authentication logic here
-    # You can validate the username and password against a database or any other authentication mechanism
+    
+  
 
-    # Example authentication check
+
     if username == 'name' and password == 'pwd':
-        # Generate JWT token
+       
         token = jwt.encode({'username': username}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token})
     else:
